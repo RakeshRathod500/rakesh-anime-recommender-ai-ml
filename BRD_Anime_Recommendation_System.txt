@@ -1,0 +1,95 @@
+1. Business Context & Problem Statement
+
+Digital content platforms face a persistent challenge: discoverability under content abundance. In anime catalogs exceeding 10,000 titles, users struggle to identify content aligned with their preferences without explicit guidance.
+
+Traditional popularity-based ranking fails to capture semantic affinity, while collaborative filtering suffers from cold-start limitations and sparse interaction matrices.
+
+This project addresses the problem by designing a content-driven, explainable recommendation system that operates independently of user interaction history, ensuring immediate usability for new users and newly added content.
+
+2. Business Objectives
+
+Deliver high-relevance anime recommendations using intrinsic content characteristics.
+
+Enable cold-start recommendations without relying on user ratings or interaction logs.
+
+Provide explainable recommendations through transparent similarity metrics and visual analytics.
+
+Ensure scalability and deployment readiness for production environments.
+
+Allow dynamic dataset ingestion, enabling the system to adapt to evolving catalogs.
+
+3. Scope Definition
+In Scope
+
+Content-based recommendation using cosine similarity.
+
+Multi-modal feature engineering (textual + numerical).
+
+Interactive recommendation control (thresholds, weighting).
+
+Visual interpretability of recommendation outcomes.
+
+Production-ready Streamlit deployment.
+
+Out of Scope
+
+User-based collaborative filtering.
+
+Real-time personalization via user sessions.
+
+Reinforcement learning or feedback loops.
+
+External API integration (e.g., MAL scraping).
+
+4. Functional Requirements
+ID	Requirement
+FR-01	Accept CSV/XLSX datasets with flexible schemas
+FR-02	Auto-handle missing values and type inconsistencies
+FR-03	Generate similarity-based recommendations in real time
+FR-04	Allow genre importance weighting via UI
+FR-05	Support anime-to-anime comparison
+FR-06	Provide KPI-level metrics (relevance, diversity)
+FR-07	Support dark/light UI theming
+5. Non-Functional Requirements
+
+Performance: Sub-second recommendation latency for ≤15k items.
+
+Explainability: All recommendations must be traceable to feature similarity.
+
+Robustness: Graceful handling of incomplete or noisy datasets.
+
+Extensibility: Architecture must allow future hybridization.
+
+Deployment-readiness: Stateless, container-friendly design.
+
+6. Success Metrics
+
+High average cosine similarity for top-N results.
+
+Stable diversity score avoiding over-specialization collapse.
+
+Human-valid qualitative relevance in OTP tests.
+
+Zero runtime failures across dataset variations.
+
+7. Key Constraints & Risks
+
+Genre taxonomies are inconsistent and coarse-grained.
+
+Popularity features risk dominance without correction.
+
+High-dimensional cosine similarity may produce score compression.
+
+Visualization must mitigate interpretability loss due to similarity saturation.
+
+8. Assumptions
+
+Dataset genre labels are semantically meaningful.
+
+Ratings represent aggregate community sentiment.
+
+Popularity reflects exposure, not necessarily quality.
+
+9. Approval & Sign-off
+
+This BRD defines a production-level recommendation platform, not an academic prototype.

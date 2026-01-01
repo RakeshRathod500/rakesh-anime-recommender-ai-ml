@@ -1,0 +1,28 @@
+﻿# -----------------------------
+# Python / Streamlit / ML
+# -----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+
+# Environment variables
+.env
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# ML models & artifacts
+*.pkl
+*.joblib
+
+# Logs & OS files
+*.log
+.DS_Store
+
+# Data (avoid pushing large datasets)
+data/
